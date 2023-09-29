@@ -1,4 +1,6 @@
 require("@nomicfoundation/hardhat-toolbox");
+require("dotenv").config("");
+const privateKey = process.env.PRIVATE_KEY;
 //require("@nomiclabs/hardhat-waffle");
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -18,9 +20,7 @@ module.exports = {
     testnet: {
       url: "https://data-seed-prebsc-1-s1.binance.org:8545/",
       chainId: 97,
-      accounts: [
-        "0xa58b4890cdf7ba6071bcdaa757d11178ab5b16d5f7b9bc38eec9e22e4149bca4",
-      ],
+      accounts: [privateKey],
     },
   },
 };
